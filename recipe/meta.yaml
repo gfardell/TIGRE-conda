@@ -1,16 +1,16 @@
 package:
   name: tigre
-  version: 2.0
+  version: 2.1
 
 build:
   preserve_egg_dir: False
   number: 0
   
 source:
-  git_rev: v2.0
+  git_rev: v2.1
   git_url: https://github.com/cern/tigre.git
-  patch:
-    - patch_setup_conda.patch
+  patches:
+    - setup_92.patch
 # test:
 #   source_files:
 #     - ./test/
