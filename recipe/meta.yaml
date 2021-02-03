@@ -3,6 +3,7 @@ package:
   version: 2.1
 
 build:
+  skip: True # [py==38 and np==115]
   preserve_egg_dir: False
   number: 0
   
