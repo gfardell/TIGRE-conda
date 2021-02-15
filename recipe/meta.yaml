@@ -6,13 +6,23 @@ build:
   skip: True # [py==38 and np==115]
   preserve_egg_dir: False
   number: 0
-  
+
+  missing_dso_whitelist:
+    - $RPATH/libc.so.6  # [linux]
+    - $RPATH/libm.so.6  # [linux]
+    - $RPATH/libdl.so.2 # [linux]
+    - $RPATH/libpthread.so.0 # [linux]
+    - $RPATH/librt.so.1 # [linux]
+    - $RPATH/libicuuc.so.60  #[linux]
+    - $RPATH/libicui18n.so.60 #[linux]
+    - $RPATH/libcudart.so.9.2 #[linux]
+    
 source:
   git_rev: v2.1
   git_url: https://github.com/cern/tigre.git
   patches:
-    - setup_92.patch
-  
+    - setup_92_v2.patch
+
 requirements:
   build:
     - python
@@ -28,11 +38,12 @@ requirements:
     - python
     - matplotlib 
     - scipy
+    - libstdcxx-ng # [unix]
     - libgcc-ng # [unix]
     - vc 14 # [win]
     - cudatoolkit=9.2
 
 about:
-  home: http://www.ccpi.ac.uk
+  home: https://github.com/CERN/TIGRE
   license:  BSD license
-  summary: 'CCPi Core Imaging Library Quantification Toolbox'
+  summary: 'TIGRE: Tomographic Iterative GPU-based Reconstruction Toolbox'
