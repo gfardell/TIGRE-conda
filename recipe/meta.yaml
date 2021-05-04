@@ -16,6 +16,7 @@ build:
     - $RPATH/libicuuc.so.60  #[linux]
     - $RPATH/libicui18n.so.60 #[linux]
     - $RPATH/libcudart.so.9.2 #[linux]
+    - $RPATH/cudart64_92.dll #[win]
     
 source:
   git_rev: v2.1
