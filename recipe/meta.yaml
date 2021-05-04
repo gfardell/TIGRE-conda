@@ -21,7 +21,7 @@ source:
   git_rev: v2.1
   git_url: https://github.com/cern/tigre.git
   patches:
-    - setup_92_v2.patch
+    - setup_92_v3.patch
 
 requirements:
   build:
